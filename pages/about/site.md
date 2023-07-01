@@ -2,6 +2,8 @@
 title: 关于站点
 ---
 
-Valaxy + valaxy-theme-yun Demo Site
+## 星雨的小站
 
-- Default Theme: [valaxy-theme-yun](https://github.com/YunYouJun/valaxy/blob/main/packages/valaxy-theme-yun/)
+### 关于站名
+
+把最喜欢的两个实物拼在一起了而已
