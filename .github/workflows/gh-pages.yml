@@ -7,7 +7,8 @@ on:
       # 项目源代码所在的分支
       - main
       - master
-      - valaxy
+      - valaxy'
+  workflow_dispatch:
 
 jobs:
   build:
