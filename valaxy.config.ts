@@ -17,7 +17,7 @@ export default defineValaxyConfig<UserThemeConfig>({
   themeConfig: {
     banner: {
       enable: true,
-      title: '星雨',
+      title: '星雨镇',
       cloud: {
         enable: true,
       },
