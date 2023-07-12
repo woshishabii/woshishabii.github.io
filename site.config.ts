@@ -8,6 +8,7 @@ export default defineSiteConfig({
     name: '星雨',
   },
   description: '一个人的记录',
+  subtitle: '星光照亮黑夜，雨滴滋润大地',
   social: [
     {
       name: 'RSS',
@@ -17,33 +18,27 @@ export default defineSiteConfig({
     },
     {
       name: 'GitHub',
-      link: 'https://github.com/YunYouJun',
+      link: 'https://github.com/woshishabii',
       icon: 'i-ri-github-line',
       color: '#6e5494',
     },
     {
       name: '网易云音乐',
-      link: 'https://music.163.com/#/user/home?id=247102977',
+      link: 'https://music.163.com/#/user/home?id=3233925346',
       icon: 'i-ri-netease-cloud-music-line',
       color: '#C20C0C',
     },
     {
       name: '哔哩哔哩',
-      link: 'https://space.bilibili.com/1579790',
+      link: '521394897',
       icon: 'i-ri-bilibili-line',
       color: '#FF8EB3',
     },
     {
       name: 'Twitter',
-      link: 'https://twitter.com/YunYouJun',
+      link: 'https://twitter.com/woshiahabi60923',
       icon: 'i-ri-twitter-line',
       color: '#1da1f2',
-    },
-    {
-      name: 'E-Mail',
-      link: 'mailto:me@yunyoujun.cn',
-      icon: 'i-ri-mail-line',
-      color: '#8E71C1',
     },
   ],
 
@@ -54,6 +49,13 @@ export default defineSiteConfig({
   sponsor: {
     enable: true,
     title: '我很可爱，请给我钱！',
-    methods: [],
+    methods: [
+      {
+        name: '爱发电',
+        url: 'https://afdian.net/a/woshishabi',
+        color: '#00A3EE',
+        icon: 'i-ri-paypal-line',
+      },
+    ],
   },
 })

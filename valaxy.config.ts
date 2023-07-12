@@ -24,16 +24,11 @@ export default defineValaxyConfig<UserThemeConfig>({
     },
 
     pages: [
-      {
-        name: '我的小伙伴们',
-        url: '/links/',
-        icon: 'i-ri-genderless-line',
-        color: 'dodgerblue',
-      },
+      
     ],
 
     footer: {
-      since: 2016,
+      since: 2023,
     },
   },
 
