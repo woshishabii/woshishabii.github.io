@@ -1,7 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://woshishabii.vercel.app/',
+  url: 'https://rainstar.pages.dev',
   lang: 'zh-CN',
   title: '星雨镇',
   author: {
