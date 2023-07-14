@@ -1,7 +1,7 @@
 import { defineSiteConfig } from 'valaxy'
 
 export default defineSiteConfig({
-  url: 'https://woshishabii.github.io/',
+  url: 'https://woshishabii.vercel.app/',
   lang: 'zh-CN',
   title: '星雨镇',
   author: {
