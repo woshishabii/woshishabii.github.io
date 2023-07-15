@@ -6,7 +6,7 @@ export default defineSiteConfig({
   title: '星雨镇',
   author: {
     name: '星雨',
-    avatar: 'https://woshishabi.vercel.app/avatar.jpg',
+    avatar: 'https://rainstar.pages.dev/avatar.jpg',
   },
   description: '一个人的记录',
   subtitle: '星光照亮黑夜，雨滴滋润大地',
