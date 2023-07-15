@@ -58,7 +58,7 @@ nask与nasm代码差异
         DW      2                   ; BPB_NumHeads      磁头数量（中断0x13）
         DD      0                   ; BPB_HiddSec       分区前的隐藏扇区数量（中断0x13）
         DD      2880                ; BPB_TotSec32      32位的扇区数量
-        DD      0xFFFFFFFF          ; 这个东西和Spec对不上，但是4bytes貌似对应BS_VolID 分卷序列号
+        DD      0xFFFFFFFF          ;                   这个东西和Spec对不上，但是4bytes貌似对应BS_VolID分卷序列号
         DB      "HELLO-OS   "       ; BS_VolLab         卷标，11位
         DB      "FAT12   "          ; BS_FilSysType     "FAT12   " "FAT16   " 或者 “FAT32   ”, 仅提供信息，不决定FAT类型
         RESB    18                  ;                   空出18字节
@@ -98,7 +98,8 @@ nask与nasm代码差异
 ; FAT12
         JMP     entry               ; 跳转至
         DB      0x90
---- (略) ---
+
+--- (略 FAT12分区格式) ---
 
 ; 程序核心
 
