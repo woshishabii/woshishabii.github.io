@@ -31,7 +31,7 @@ export default defineSiteConfig({
     },
     {
       name: '哔哩哔哩',
-      link: '521394897',
+      link: 'https://space.bilibili.com/521394897',
       icon: 'i-ri-bilibili-line',
       color: '#FF8EB3',
     },
@@ -53,7 +53,7 @@ export default defineSiteConfig({
     methods: [
       {
         name: '爱发电',
-        url: 'https://afdian.net/a/woshishabi',
+        url: 'https://rainstar.pages.dev/sponsor/afdian.png',
         color: '#00A3EE',
         icon: 'i-ri-paypal-line',
       },
