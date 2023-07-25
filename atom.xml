@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://rainstar.pages.dev/</id>
+    <title>星雨镇</title>
+    <updated>2023-07-25T15:31:39.751Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>星雨</name>
+        <email>i@valaxy.site</email>
+        <uri>https://valaxy.site</uri>
+    </author>
+    <link rel="alternate" href="https://rainstar.pages.dev/"/>
+    <link rel="self" href="https://rainstar.pages.dev/feed.atom"/>
+    <subtitle>一个人的记录</subtitle>
+    <logo>https://rainstar.pages.dev/avatar.jpg</logo>
+    <icon>https://rainstar.pages.dev/favicon.svg</icon>
+    <rights>CC BY-NC-SA 4.0 2023 © 星雨</rights>
+    <entry>
+        <title type="html"><![CDATA[30天自制操作系统 笔记 01]]></title>
+        <id>https://rainstar.pages.dev/posts/30day_os-01</id>
+        <link href="https://rainstar.pages.dev/posts/30day_os-01"/>
+        <updated>2023-07-14T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h2>前言</h2>
+<p>本系列是星雨学习 川合秀实 的《30天自制操作系统》一书的笔记</p>
+<h2>0x00 从计算机结构到汇编程序入门</h2>
+<h3>计算机原理</h3>
+<p>电脑的处理中心是CPU(Central Proce</p>
+]]></content>
+        <author>
+            <name>星雨</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2023-07-14T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[星雨 建站]]></title>
+        <id>https://rainstar.pages.dev/posts/hello-world</id>
+        <link href="https://rainstar.pages.dev/posts/hello-world"/>
+        <updated>2023-07-01T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<h2>星雨的小站建站辣</h2>
+]]></content>
+        <author>
+            <name>星雨</name>
+            <email>i@valaxy.site</email>
+            <uri>https://valaxy.site</uri>
+        </author>
+        <published>2023-07-01T00:00:00.000Z</published>
+    </entry>
+</feed>

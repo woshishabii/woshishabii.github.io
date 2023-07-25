@@ -1,0 +1,38 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "星雨镇",
+    "home_page_url": "https://rainstar.pages.dev/",
+    "feed_url": "https://rainstar.pages.dev/feed.json",
+    "description": "一个人的记录",
+    "icon": "https://rainstar.pages.dev/avatar.jpg",
+    "author": {
+        "name": "星雨",
+        "url": "https://valaxy.site"
+    },
+    "items": [
+        {
+            "id": "",
+            "content_html": "<h2>前言</h2>\n<p>本系列是星雨学习 川合秀实 的《30天自制操作系统》一书的笔记</p>\n<h2>0x00 从计算机结构到汇编程序入门</h2>\n<h3>计算机原理</h3>\n<p>电脑的处理中心是CPU(Central Proce</p>\n",
+            "url": "https://rainstar.pages.dev/posts/30day_os-01",
+            "title": "30天自制操作系统 笔记 01",
+            "date_modified": "2023-07-14T00:00:00.000Z",
+            "date_published": "2023-07-14T00:00:00.000Z",
+            "author": {
+                "name": "星雨",
+                "url": "https://valaxy.site"
+            }
+        },
+        {
+            "id": "",
+            "content_html": "<h2>星雨的小站建站辣</h2>\n",
+            "url": "https://rainstar.pages.dev/posts/hello-world",
+            "title": "星雨 建站",
+            "date_modified": "2023-07-01T00:00:00.000Z",
+            "date_published": "2023-07-01T00:00:00.000Z",
+            "author": {
+                "name": "星雨",
+                "url": "https://valaxy.site"
+            }
+        }
+    ]
+}
