@@ -9,7 +9,9 @@
     "source.fixAll.eslint": true
   },
   "files.associations": {
-    "*.css": "postcss"
+    "*.css": "postcss",
+    "bitset": "c",
+    "*.inc": "c"
   },
   "editor.formatOnSave": false,
   "svg.preview.background": "editor"

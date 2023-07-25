@@ -286,3 +286,120 @@ BIOS用于提供一些基础的低级服务给初期的系统程序，基本的�
 
 ### 制作启动区
 
+为了方便后续开发，一般不适用nask制作整个硬盘镜像，而是制作启动区，剩余部分使用
+映像管理工具做，更加方便。
+
+首先将helloos.nas的后半部分截掉，只剩启动区的512字节（; 程序核心之前）
+将文件名改为ipl.nas，然后制作 asm 脚本：
+
+``` shell
+nasm ipl.nas -o ipl.bin -l ipl.list
+```
+
+(由于nask不支持linux所以使用nasm，代码内相关内容也要改动)
+
+制作生成磁盘镜像文件脚本 makeimg
+
+``` shell 
+./tolset/edimg   imgin:../z_tools/fdimg0at.tek   wbinimg src:ipl.bin len:512 from:0 to:0   imgout:helloos.img
+```
+
+由于光盘自带的edimg预编译版本为Windows可执行文件格式，Linux版本应当自己编译，
+到 光盘根目录/omake/tolsrc/edimg0j 目录，修改 edimg.c，注释SAR_MODE_WIN32定义，取消注释SAR_MODE_POSIX定义。执行
+
+``` shell
+gcc edimg.c autodec_.c -o edimg
+chmod +x ./edimg
+```
+
+将编译得到的edimg可执行文件和fdimg0at.tek复制到 工程目录/tolset
+
+创建 makeimg 脚本
+
+``` shell
+./tolset/edimg.exe   imgin:./tolset/fdimg0at.tek   wbinimg src:ipl.bin len:512 from:0 to:0   imgout:helloos.img
+```
+
+创建虚拟机启动脚本:
+
+安装qemu，将 光盘根目录/tolset/z_toolls/qemu 目录下的 bios.bin 和 vgabios.bin 复制到 工程目录/qemu/fw
+
+创建 run 脚本
+
+``` shell
+qemu-system-x86_64 -L ./qemu/fw -m 32-fda ./helloos.img
+```
+
+之后就能通过 asm -> makeimg -> run 来测试代码了。
+
+### Makefile 入门
+
+make 是一个相当方便的构建工具，他可以通过只编译修改过的文件来大量节省时间。
+要使用make，首先应该创建make配置文件Makefile，并在Makefile里写入文件生成规则。
+
+``` makefile
+ipl.bin : ipl.nas Makefile
+    nasm ipl.nas -o ipl.bin -l ipl.lst
+
+helloos.img : ipl.bin Makefile
+    ./tolset/edimg   imgin:./tolset/fdimg0at.tek   wbinimg src:ipl.bin len:512 from:0 to:0   imgout:helloos.img
+
+asm :
+    make ipl.bin
+
+img :
+    make helloos.img
+
+run : helloos.img
+    qemu-system-x86_64 -L ./qemu/fw -m 32 -fda ./helloos.img
+```
+
+现在就可以通过简单的
+``` shell
+make run
+```
+来启动镜像了。
+
+## 0x03 进入32位模式并导入C语言
+
+### 制作真正的IPL(Initial Program Loader, 启动程序加载器)
+
+首先通过调用BIOS中断实现读取磁盘最初512字节的启动区。根据中断表，读取硬盘需要进行以下操作：
+
+```
+AH = 02h
+AL = 要读取的扇区数
+CH = 柱面数低八位
+CL = 扇区数1-63  (0-5位)
+     柱面数高二位 (6-7位, 仅硬盘)
+DH = 磁头号
+DL = 驱动器号 (第七位设为硬盘)
+ES:BX -> 数据缓存
+```
+
+输出:
+
+```
+出错时CF被设置
+如果 AH = 11h (ECC纠正错误), AL = 突发长度
+成功时CF被清除
+AH = 状态 (see #00234)
+AL = 传输的扇区数
+```
+
+对应汇编代码为:
+
+``` asm
+        MOV     AX,0x0820
+        MOV     ES,AX
+        MOV     CH,0            ; 柱面 0
+        MOV     DH,0            ; 磁头 0
+        MOV     CL,2            ; 扇区 2
+
+        MOV     AH,0x02         ; AH=0x02 读盘
+        MOV     AL,1            ; 1个扇区
+        MOV     BX,0
+        MOV     DL,0x00         ; A 驱动器
+        INT     0x13            ; 调用BIOS
+        JC      error
+```
